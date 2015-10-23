@@ -23,6 +23,9 @@ providers {
 }
 ```
 
+See [Terraform Plugin Basics](https://terraform.io/docs/plugins/basics.html) for
+more information on installing plugins.
+
 Then you'll need to set up the provider in a Terraform config file, like so:
 
 ```hcl
