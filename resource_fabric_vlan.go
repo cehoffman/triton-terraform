@@ -41,7 +41,7 @@ func resourceFabricVLAN() *schema.Resource {
 	}
 }
 
-func resourceFabricVLANCreate(d ResourceData, config *Config) error {
+func resourceFabricVLANCreate(d *schema.ResourceData, config *Config) error {
 	cloud, err := config.Cloud()
 	if err != nil {
 		return err
@@ -66,7 +66,7 @@ func resourceFabricVLANCreate(d ResourceData, config *Config) error {
 	return nil
 }
 
-func resourceFabricVLANExists(d ResourceData, config *Config) (bool, error) {
+func resourceFabricVLANExists(d *schema.ResourceData, config *Config) (bool, error) {
 	cloud, err := config.Cloud()
 	if err != nil {
 		return false, err
@@ -82,7 +82,7 @@ func resourceFabricVLANExists(d ResourceData, config *Config) (bool, error) {
 	return vlan != nil && err == nil, err
 }
 
-func resourceFabricVLANRead(d ResourceData, config *Config) error {
+func resourceFabricVLANRead(d *schema.ResourceData, config *Config) error {
 	cloud, err := config.Cloud()
 	if err != nil {
 		return err
@@ -105,7 +105,7 @@ func resourceFabricVLANRead(d ResourceData, config *Config) error {
 	return nil
 }
 
-func resourceFabricVLANUpdate(d ResourceData, config *Config) error {
+func resourceFabricVLANUpdate(d *schema.ResourceData, config *Config) error {
 	cloud, err := config.Cloud()
 	if err != nil {
 		return err
@@ -130,7 +130,7 @@ func resourceFabricVLANUpdate(d ResourceData, config *Config) error {
 	return resourceFabricVLANRead(d, config)
 }
 
-func resourceFabricVLANDelete(d ResourceData, config *Config) error {
+func resourceFabricVLANDelete(d *schema.ResourceData, config *Config) error {
 	cloud, err := config.Cloud()
 	if err != nil {
 		return err

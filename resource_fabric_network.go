@@ -114,7 +114,7 @@ func resourceFabricNetwork() *schema.Resource {
 	}
 }
 
-func resourceFabricNetworkCreate(d ResourceData, config *Config) error {
+func resourceFabricNetworkCreate(d *schema.ResourceData, config *Config) error {
 	cloud, err := config.Cloud()
 	if err != nil {
 		return err
@@ -157,7 +157,7 @@ func resourceFabricNetworkCreate(d ResourceData, config *Config) error {
 	return nil
 }
 
-func resourceFabricNetworkExists(d ResourceData, config *Config) (bool, error) {
+func resourceFabricNetworkExists(d *schema.ResourceData, config *Config) (bool, error) {
 	cloud, err := config.Cloud()
 	if err != nil {
 		return false, err
@@ -168,7 +168,7 @@ func resourceFabricNetworkExists(d ResourceData, config *Config) (bool, error) {
 	return network != nil && err == nil, err
 }
 
-func resourceFabricNetworkRead(d ResourceData, config *Config) error {
+func resourceFabricNetworkRead(d *schema.ResourceData, config *Config) error {
 	cloud, err := config.Cloud()
 	if err != nil {
 		return err
@@ -196,7 +196,7 @@ func resourceFabricNetworkRead(d ResourceData, config *Config) error {
 	return nil
 }
 
-func resourceFabricNetworkDelete(d ResourceData, config *Config) error {
+func resourceFabricNetworkDelete(d *schema.ResourceData, config *Config) error {
 	cloud, err := config.Cloud()
 	if err != nil {
 		return err
